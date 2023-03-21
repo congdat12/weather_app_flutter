@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
     super.key,
     this.onPressed,
     this.width,
-    this.height = 50.0,
+    this.height = 76.0,
     this.color = Colors.red,
     required this.text,
     this.textColor = Colors.white,
@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
     this.iconSize = 24.0,
     Color? iconColor,
     BorderRadius? borderRadius,
-    // this.borderRadius = const BorderRadius.all(Radius.circular(9.0)),
+    
   })  : iconColor = iconColor ?? Colors.red.withOpacity(0.98),
         borderRadius = borderRadius ?? BorderRadius.circular(9.0);
 
@@ -47,14 +47,14 @@ class CustomButton extends StatelessWidget {
          
         ),
         child: !isAddIcon
-            ? Text(text, style:const TextStyle(color: Colors.red))
+            ? Text(text, style:const TextStyle(color: Colors.black, fontSize: 28, fontWeight: FontWeight.w500))
             : Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(icon, size: iconSize, color: iconColor),
                   const SizedBox(width: 2.0),
                   Text(text,
-                      style: const TextStyle(color: Colors.black)),
+                      style: const TextStyle(color: Colors.black,fontSize: 28, fontWeight: FontWeight.w500)),
                 ],
               ),
       ),
