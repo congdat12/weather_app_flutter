@@ -8,7 +8,18 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      //backgroundColor: Colors.transparent,
+      body: Container(
+        decoration:  const BoxDecoration(
+                gradient:  LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0xff7F4CD2),
+                    Color.fromARGB(255, 40, 13, 83)
+                  ],
+                )),
+        
         padding: const EdgeInsets.only(top: 61, right: 25, left: 25),
         child: Column(
           children: [
@@ -18,7 +29,7 @@ class LoginPage extends StatelessWidget {
                 'Login',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: Colors.red,
+                    color: Colors.white,
                     fontSize: 36),
               ),
             ),
@@ -27,7 +38,7 @@ class LoginPage extends StatelessWidget {
               child: Text(
                 'Enter your account details to login.',
                 style: TextStyle(
-                    color: Colors.red,
+                    color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
               ),
@@ -54,21 +65,21 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
-                    color: Colors.red),
+                    color: Colors.white),
               ),
             ),
             const SizedBox(height: 30,),
             Row(
               children: const [
-                Expanded(child: Divider()),
-                Text('Or', style: TextStyle(fontSize: 16),),
-                Expanded(child: Divider()),
+                Expanded(child: Divider(color: Colors.white)),
+                Text(' Or ', style: TextStyle(fontSize: 16, color: Colors.white),),
+                Expanded(child: Divider(color: Colors.white,)),
               ],
             ),
             const Text(
               'Sign in with',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.w500,
                   fontSize: 28),
             ),
@@ -78,38 +89,51 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.amber,
-                    child: Image.asset(
-                      'assets/icons/apple.png',
+                Column(
+                  children: [
+                    SizedBox(
+                      width: 80,
+                      height: 80,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
+                          'assets/icons/apple.png',
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 6,),
+                    const Text('Apple',style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),),
+                    
+                  ],
                 ),
-                const SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.amber,
-                    child: Image(
-                        image: AssetImage(
-                      'assets/icons/google.png',
-                    )),
-                  ),
+                Column(
+                  children: const [
+                     SizedBox(
+                      width: 80,
+                      height: 80,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image(
+                            image: AssetImage(
+                          'assets/icons/google.png',
+                        )),
+                      ),
+                    ),
+                     SizedBox(height: 6,),
+                     Text('Google', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),),
+                  ],
                 )
               ],
             ),
             const SizedBox(
-              height: 60,
+              height: 30,
             ),
-            CustomButton(text: 'Login'),
+            CustomButton(text: 'Login', borderRadius: const BorderRadius.all(Radius.circular(25)),),
             const Spacer(),
             TextButton(
                 onPressed: () {},
                 child: const Text(
-                  'I am new here ->',
+                  'I am new here ->', style: TextStyle(color: Colors.white),
                 ))
           ],
         ),

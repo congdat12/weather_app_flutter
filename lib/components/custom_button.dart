@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
     this.onPressed,
     this.width,
     this.height = 76.0,
-    this.color = Colors.red,
+    this.color = const Color(0xff7F4CD2),
     required this.text,
     this.textColor = Colors.white,
     this.isAddIcon = false,
@@ -42,12 +42,12 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: color,
-          border: Border.all(color: Colors.red, width: 1.2),
+          border: Border.all(color: Color(0xff7F4CD2), width: 1.2),
           borderRadius: borderRadius,
          
         ),
         child: !isAddIcon
-            ? Text(text, style:const TextStyle(color: Colors.black, fontSize: 28, fontWeight: FontWeight.w500))
+            ? Text(text, style:const TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500))
             : Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
