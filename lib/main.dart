@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/home/home_page.dart';
+import 'package:flutter_application_1/pages/home/widget/custom_listview.dart';
+import 'package:flutter_application_1/pages/home/widget/custom_today_listview.dart';
 import 'package:flutter_application_1/pages/login/login_page.dart';
+
+import 'main/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const  LoginPage(),
+      home: const  MainPage(),
     );
   }
 }
